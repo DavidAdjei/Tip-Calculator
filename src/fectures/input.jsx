@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Input({name, image}) {
+export default function Input({name, image, onChange, placeholder}) {
   return (
     <div className='container__left--input'>
           <p className='label'>{name}</p>
@@ -8,7 +8,13 @@ export default function Input({name, image}) {
               <div className='image__container'>
                   <img src={image} alt={name} />
               </div>
-              <input type="text" name={name} className='inputField'/>
+              <input
+                  type="text"
+                  name={name}
+                  className='inputField'
+                  onChange={onChange}
+                  placeholder={placeholder}  
+              />
           </div>
     </div>
   )
