@@ -5,23 +5,19 @@ import person from '../images/icon-person.svg';
 
 export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
   const handleCustomTipChange = (event) => {
-      setTip(parseFloat(event.target.value));
-      console.log(tip)
+    var num = event.target.value;
+      setTip(num === ''? 0 : parseFloat(num));
     };
     
-    const handleBillChange = (event) => {
-        const amount = event.target.value;
-        amount === '' ? setBill(0) :
-        setBill(parseFloat(amount))
-        console.log(bill)
-    }
+  const handleBillChange = (event) => {
+      const amount = event.target.value;
+      setBill(amount === '' ? 0 : parseFloat(amount));
+    };
 
-    const handlePeopleChange = (event) => {
-        const num = event.target.value;
-        num === '' ? setPeople(0) :
-        setPeople(parseFloat(num))
-        console.log(people)
-    }
+  const handlePeopleChange = (event) => {
+      const num = event.target.value;
+      setPeople(num === '' ? 0 : parseFloat(num));
+    };
 
   return (
     <div className='container__left'>
@@ -29,20 +25,32 @@ export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
         name='bill'
         image={dollar}
         onChange={handleBillChange}
-        placeholder = {bill} 
+        placeholder={bill} 
+        value={bill !== 0 ? bill : ''}
       />
       <div className="container__left--tip">
         <p>Select Tip %</p>
         <div className="tip__section">
-          <button onClick={() => setTip(5)}>5%</button>
-          <button onClick={() => setTip(10)}>10%</button>
-          <button onClick={() => setTip(15)}>15%</button>
-          <button onClick={() => setTip(25)}>25%</button>
-          <button onClick={() => setTip(50)}>50%</button>
+          <button
+            className={`tip__button ${tip === 5 ? 'active' : ''}`}
+            onClick={() => setTip(5)}>5%</button>
+          <button
+            className={`tip__button ${tip === 10 ? 'active' : ''}`}
+            onClick={() => setTip(10)}>10%</button>
+          <button
+            className={`tip__button ${tip === 15 ? 'active' : ''}`}
+            onClick={() => setTip(15)}>15%</button>
+          <button
+            className={`tip__button ${tip === 25 ? 'active' : ''}`}
+            onClick={() => setTip(25)}>25%</button>
+          <button
+            className={`tip__button ${tip === 50 ? 'active' : ''}`}
+            onClick={() => setTip(50)}>50%</button>
           <input
             type="text"
             placeholder="Custom"
             onChange={handleCustomTipChange}
+            value={tip !== 0 ? tip : ''}
           />
         </div>
       </div>
@@ -50,7 +58,8 @@ export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
         name='Number of People'
         image={person}
         onChange={handlePeopleChange}
-        placeholder = {people}
+        placeholder={people}
+        value={people !== 0 ? people : ''}
       />
     </div>
   );

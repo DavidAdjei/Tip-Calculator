@@ -16,7 +16,7 @@ export default function App() {
       const calcTipAmount = (bill * (tip / 100)) / people;
       const calcTotal = (bill / people) + calcTipAmount;
 
-      setTipAmount(parseFloat(calcTipAmount.toFixed(2))); 
+      setTipAmount(calcTipAmount.toFixed(2)); 
       setTotal(calcTotal.toFixed(2)); 
     }
   }, [bill, people, tip]);

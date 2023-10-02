@@ -121,7 +121,7 @@ img{
     gap: 1rem;
 }
 
-.tip__section button{
+.tip__button{
     width: 9.019rem;
     height: 3rem;
     padding-inline: 2rem;
@@ -131,9 +131,21 @@ img{
     color: var(--white);
 }
 
-.tip__section button:hover{
+.tip__button:hover{
     background-color: var(--strongCyan);
     color: var(--veryDarkCyan);
+    outline: none;
+    border: none;
+}
+
+.tip__button:focus{
+    outline: none;
+    border: none;
+}
+
+.active{
+    color: var(--veryDarkCyan);
+    background-color: var(--strongCyan);
     outline: none;
     border: none;
 }
