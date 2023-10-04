@@ -1,6 +1,7 @@
 import React from 'react'
 import Left from './Left'
 import Right from './Right'
+import './container.css'
 
 export default function Container({setBill, setTip, setPeople, bill, people, tip, tipAmount, total, reset}) {
   return (

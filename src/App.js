@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import Container from './components/container';
 
 export default function App() {
-  const [bill, setBill] = useState(0);
-  const [people, setPeople] = useState(0);
+  const [bill, setBill] = useState('');
+  const [people, setPeople] = useState('');
   const [tip, setTip] = useState(0);
-  const [tipAmount, setTipAmount] = useState(0.00);
+  const [tipAmount, setTipAmount] = useState(0.50);
   const [total, setTotal] = useState(0.00); 
 
   useEffect(() => {
     if (bill === 0 || people === 0 || tip === 0) {
-      setTipAmount(0.00); 
-      setTotal(0.00); 
-    } else {
+      setTipAmount(0.00.toFixed(2)); 
+      setTotal(0.00.toFixed(2)); 
+    } else if (bill === '' || people === '') { 
+      setTipAmount(0.00.toFixed(2)); 
+      setTotal(0.00.toFixed(2));
+    }else {
       const calcTipAmount = (bill * (tip / 100)) / people;
       const calcTotal = (bill / people) + calcTipAmount;
 
@@ -22,8 +25,8 @@ export default function App() {
   }, [bill, people, tip]);
 
   const reset = () => {
-    setBill(0)
-    setPeople(0)
+    setBill('')
+    setPeople('')
     setTip(0)
     setTipAmount(0.00)
     setTotal(0.00)

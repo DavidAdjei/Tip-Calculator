@@ -6,17 +6,17 @@ import person from '../images/icon-person.svg';
 export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
   const handleCustomTipChange = (event) => {
     var num = event.target.value;
-      setTip(num === ''? 0 : parseFloat(num));
+      setTip(num === ''? '' : parseFloat(num));
     };
     
   const handleBillChange = (event) => {
       const amount = event.target.value;
-      setBill(amount === '' ? 0 : parseFloat(amount));
+      setBill(amount === '' ? '' : parseFloat(amount));
     };
 
   const handlePeopleChange = (event) => {
       const num = event.target.value;
-      setPeople(num === '' ? 0 : parseFloat(num));
+      setPeople(num === '' ? '' : parseFloat(num));
     };
 
   return (
@@ -25,8 +25,8 @@ export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
         name='bill'
         image={dollar}
         onChange={handleBillChange}
-        placeholder={bill} 
-        value={bill !== 0 ? bill : ''}
+        placeholder={0} 
+        value={bill}
       />
       <div className="container__left--tip">
         <p className='label'>Select Tip %</p>
@@ -47,7 +47,7 @@ export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
             className={`tip__button ${tip === 50 ? 'active' : ''}`}
             onClick={() => setTip(50)}>50%</button>
           <input
-            type="text"
+            type="number"
             placeholder="Custom"
             onChange={handleCustomTipChange}
             value={tip !== 0 ? tip : ''}
@@ -58,8 +58,8 @@ export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
         name='Number of People'
         image={person}
         onChange={handlePeopleChange}
-        placeholder={people}
-        value={people !== 0 ? people : ''}
+        placeholder={0}
+        value={people}
       />
     </div>
   );

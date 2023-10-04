@@ -6,14 +6,14 @@ export default function Right({ tipAmount, total, bill, people, tip, reset }) {
       <div className="container__right--items">
         <div className="container__right--tip">
           <p>Tip Amount <span>/person</span></p>
-          <h1>{tipAmount}</h1>
+          <h1>${tipAmount}</h1>
         </div>
         <div className="container__right--total">
           <p>Total <span>/person</span></p>
-          <h1>{total}</h1>
+          <h1>${total}</h1>
         </div>
       </div>
-      <button disabled={bill === 0 || people === 0 || tip === 0} 
+      <button disabled={bill === 0 || people === 0 || tip === 0 || people === '' || bill === ''} 
         className="reset" 
         onClick={reset}>
         RESET
