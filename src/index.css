@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
 :root{
     --veryDarkCyan: hsl(183, 100%, 15%);
     --darkGrayishCyan: hsl(186, 14%, 43%);
@@ -7,12 +9,15 @@
     --white: hsl(0, 0%, 100%);
     --strongCyan: hsl(172, 67%, 45%);
     --fontSize: 24px;
+    --fontFamily: 'Space Mono', monospace;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: var(--fontFamily);
+    font-weight: 700;
 }
 
 body{
@@ -37,6 +42,9 @@ body{
 
 .title{
   text-align: center;
+  color: var(--darkGrayishCyan);
+  font-size: 1rem;
+  letter-spacing: 8px;
 }
 
 .container{
@@ -85,6 +93,8 @@ body{
 
 .label{
   text-transform: capitalize;
+  color: var(--darkGrayishCyan);
+  font-size: 1.09rem;
 }
 
 img{
@@ -99,7 +109,8 @@ img{
     width: 90%;
     height: 100%;
     text-align: end;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--veryDarkCyan);
 }
 
 .inputField:focus{
@@ -125,10 +136,11 @@ img{
     width: 9.019rem;
     height: 3rem;
     padding-inline: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     border-radius: .4rem;
     background-color: var(--veryDarkCyan);
     color: var(--white);
+
 }
 
 .tip__button:hover{
@@ -155,10 +167,11 @@ img{
     height: 3rem;
     text-align: end;
     padding-inline: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     border-radius: .4rem;
     background-color: var(--veryLightGrayishCyan);
     border: none;
+    color: var(--veryDarkCyan);
 }
 
 .tip__section input:focus{
@@ -206,5 +219,20 @@ img{
     border-radius: .4rem;
     color: var(--veryDarkCyan);
     background-color: var(--strongCyan);
-    padding: 1.1rem;
+    padding: .7rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.reset:disabled{
+    background-color: hsl(183, 97%, 23%);
+    cursor: default;
+}
+
+.display{
+    display: flex;
+}
+
+.hide{
+    display: none;
 }

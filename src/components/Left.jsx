@@ -29,7 +29,7 @@ export default function Left({ setTip, setPeople, setBill, bill, people, tip}) {
         value={bill !== 0 ? bill : ''}
       />
       <div className="container__left--tip">
-        <p>Select Tip %</p>
+        <p className='label'>Select Tip %</p>
         <div className="tip__section">
           <button
             className={`tip__button ${tip === 5 ? 'active' : ''}`}
